@@ -3,7 +3,7 @@
 
 # Docker
 
-docker run -d -p 8123:8123 -v /root/homeassistant:/config homeassistant/home-assistant:latest
+docker run -d --restart=always --name="home-assistants" -e "TZ=Asia/Shanghai" -v /data/homeassistant/config:/config --net=host homeassistant/home-assistant:latest
 
 # Install HACS
 
